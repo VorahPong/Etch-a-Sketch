@@ -10,13 +10,17 @@ for(let index = 0; index < BOARD_SIZE; index++){
 
 const pixel = document.querySelectorAll('#pixel');
 
-
+// Hover 
 for(let pixel_index = 0; pixel_index < pixel.length; pixel_index++){
     pixel[pixel_index].addEventListener('mouseover', function (e) {
         e.target.style.backgroundColor = 'black';
 })};
+//
 
-for(let pixel_index = 0; pixel_index < pixel.length; pixel_index++){
-    pixel[pixel_index].addEventListener('mouseout', function (e) {
-        e.target.style.backgroundColor = 'black';
-})};
+// Reset
+const reset = document.querySelector('#reset');
+reset.addEventListener('click', () => {
+    for(let pixel_index = 0; pixel_index < pixel.length; pixel_index++){
+       pixel[pixel_index].style.backgroundColor = 'transparent';
+    }
+});
